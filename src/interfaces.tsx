@@ -1,10 +1,3 @@
-interface IMovieItem {
-  headline: string;
-  premiereDate: Date;
-  cover: string;
-  genre: Array<HTMLElement>;
-}
-
 interface IReqItem {
   adult: boolean;
   backdrop_path: string;
@@ -29,4 +22,4 @@ interface IPopular {
   total_results: number;
 }
 
-export type { IMovieItem, IReqItem, IPopular };
+export type { IReqItem, IPopular };

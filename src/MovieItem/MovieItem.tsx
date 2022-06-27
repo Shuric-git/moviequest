@@ -1,24 +1,25 @@
-// import {IMovieItem} from "../interfaces";
-
 import { FC } from 'react';
+import { Card } from 'antd';
 
 import { IReqItem } from '../interfaces';
+import 'antd/dist/antd.css';
 
-export const MovieItem: FC<IReqItem> = (props: IReqItem) => {
+const { Meta } = Card;
+
+export const MovieItem: FC<{ itemProps: IReqItem }> = (props: { itemProps: IReqItem }) => {
+  // , genre_ids,  release_date
   let { itemProps } = props;
-  let { title, genre_ids, poster_path, overview, release_date } = itemProps;
-  console.log(title);
+  let { title, poster_path, overview } = itemProps;
+  console.log(poster_path);
   return (
-    <div className="itemWrapper">
-      <div className="imgWrapper">
-        <img src={poster_path} alt="" />
-      </div>
-      <div className="infoWrapper">
-        <h5 className="movieItemTitle">{title}</h5>
-        <span className="releaseDate">{release_date}</span>
-        <div className="genresWrapper">{genre_ids}</div>
-        <p className="overview">{overview}</p>
-      </div>
-    </div>
+    <>
+      <Card
+        hoverable
+        style={{ width: 454 }}
+        cover={<img alt="example" src={`https://image.tmdb.org/t/p/original${poster_path}`} />}
+      >
+        <Meta title={title} description={overview} />
+      </Card>
+    </>
   );
 };

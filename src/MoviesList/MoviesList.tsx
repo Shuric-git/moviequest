@@ -1,40 +1,29 @@
 import { FC, useState, useEffect } from 'react';
+import { Col, Row } from 'antd';
 
-import { MovieDBService } from '../services/movieDBService';
 import { IReqItem } from '../interfaces';
-import { MovieItem } from '../router';
-
-// import { MovieItem } from '../MovieItem/MovieItem';
+import { MovieItem, MovieDBService } from '../router';
 
 export const MoviesList: FC = () => {
   const [movies, setMovies] = useState<Array<IReqItem>>([]);
 
   const movieDBService = new MovieDBService();
-  // const getMovie = () => {
-  //   movieDBService.getMovie(3).then((item) => {
-  //     console.log(item);
-  //   });
-  // };
-  // getMovie();
-  // let topRatedArr: IReqItem[] = [];
-  // const getTopRated: () => void = async () => {
-  //   topRatedArr = ;
-  //   await setMovies(topRatedArr);
-  // };
 
   useEffect(() => {
-    const topRatedArr = movieDBService.getTopRated();
+    const topRatedArr = movieDBService.getSearch('return');
     topRatedArr.then((data: IReqItem[]) => setMovies(data));
-
-    // setTimeout(() => console.log(topRatedArr), 1000);
   }, []);
   const elements = movies.map((item: IReqItem) => {
-    // let { title, genre_ids, poster_path, owerview, release_date } = item;
     return (
-      <li key={Math.random() * 1000}>
+      <Col span={12} key={Math.random() * 1000}>
         <MovieItem itemProps={item} />
-      </li>
+      </Col>
     );
   });
-  return <ul className="moviesList">{elements}</ul>;
+  return (
+    <>
+      <Row gutter={[16, 16]}>{elements}</Row>
+      {/*<ul className="moviesList"></ul>*/}
+    </>
+  );
 };

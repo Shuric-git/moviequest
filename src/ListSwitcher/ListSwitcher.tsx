@@ -1,10 +1,25 @@
 import { FC } from 'react';
+import { Tabs } from 'antd';
+
+import 'antd/dist/antd.css';
+
+const { TabPane } = Tabs;
 
 export const ListSwitcher: FC = () => {
+  const onChange = (key: string) => {
+    console.log(key);
+  };
+
   return (
     <div>
-      <button>Search</button>
-      <button>Rated</button>
+      <Tabs defaultActiveKey="1" onChange={onChange}>
+        <TabPane tab="Search" key="1">
+          Content of Tab Pane 1
+        </TabPane>
+        <TabPane tab="Rated" key="2">
+          Content of Tab Pane 2
+        </TabPane>
+      </Tabs>
     </div>
   );
 };

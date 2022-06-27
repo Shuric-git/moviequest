@@ -5,8 +5,12 @@ export class MovieDBService {
 
   _apiKey: string = 'f7e88ab48889b711cf5ed287d894ccbc';
 
-  async fetcher(url: string) {
-    let res = await fetch(`${this._baseUrl}${url}?api_key=${this._apiKey}&language=en-US`);
+  async fetcher(url: string, query: string) {
+    let resString = `${this._baseUrl}${url}?api_key=${this._apiKey}&language=en-US`;
+    if (url === 'search/movie') {
+      resString += `&query=${query}&page=1&include_adult=false`;
+    }
+    let res = await fetch(resString);
 
     if (!res.ok) {
       throw new Error(`could not fetch ${url}, received ${res.status}`);
@@ -15,28 +19,21 @@ export class MovieDBService {
   }
 
   async getPopular(): Promise<Array<IReqItem>> {
-    const res: IPopular = await this.fetcher('movie/popular');
+    const res: IPopular = await this.fetcher('movie/popular', '');
+    return res.results;
+  }
+
+  async getSearch(query: string): Promise<Array<IReqItem>> {
+    const res: IPopular = await this.fetcher('search/movie', query);
     return res.results;
   }
 
   async getTopRated(): Promise<Array<IReqItem>> {
-    const res: IPopular = await this.fetcher('movie/top_rated');
+    const res: IPopular = await this.fetcher('movie/top_rated', '');
     return res.results;
   }
 
   async getMovie(id: number) {
-    return this.fetcher(`movie/${id}`);
+    return this.fetcher(`movie/${id}`, '');
   }
 }
-
-// const movieDB = new MovieDBService();
-//
-// movieDB.getMovie(2).then((item) => {
-//   console.log(item);
-// });
-//
-// movieDB.getPopular().then((item) => {
-//   item.forEach((t) => {
-//     console.log(t.title);
-//   });
-// });
