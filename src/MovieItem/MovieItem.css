@@ -18,11 +18,12 @@
   display: flex;
   padding: 10px;
   overflow: hidden;
+  font-family: Roboto;
 }
 
 .cardDescriptionWrapper {
   padding: 12px 20px;
-  font-family: Sans-Serif;
+  font-family: Roboto;
 }
 
 /*# sourceMappingURL=MovieItem.css.map */

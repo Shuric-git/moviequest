@@ -17,7 +17,7 @@ export const MovieItem: FC<{ itemProps: IReqItem }> = (props: { itemProps: IReqI
         className="cardContainer"
         hoverable
         bordered={false}
-        style={{ width: 454, height: 281, display: 'flex', overflow: 'hidden', fontFamily: 'Sans-Serif' }}
+        style={{ width: 454, height: 281, display: 'flex', overflow: 'hidden', fontFamily: 'Helvetica Neue' }}
         cover={
           <img
             style={{ width: 183, height: 281 }}
