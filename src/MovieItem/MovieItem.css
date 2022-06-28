@@ -1,3 +1,6 @@
-
+.cardContainer {
+  background-color: tomato;
+  display: flex;
+}
 
 /*# sourceMappingURL=MovieItem.css.map */
