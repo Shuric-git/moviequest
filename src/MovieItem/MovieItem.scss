@@ -1,8 +1,15 @@
+@import "../fonts/mixins";
+@import "../fonts/fonts";
+
 .cardContainer {
-  background-color: tomato;
+  width: 454px;
+  height: 281px;
   display: flex;
+  padding: 10px;
+  overflow: hidden;
 }
 
 .cardDescriptionWrapper {
-
+  padding: 12px 20px;
+  font-family: Sans-Serif;
 }
