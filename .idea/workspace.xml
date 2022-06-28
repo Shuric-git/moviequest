@@ -3,6 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="6364f2f7-8c03-4be6-8b07-ed3d53a253f8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ListSwitcher/ListSwitcher.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ListSwitcher/ListSwitcher.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieItem/MovieItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieItem/MovieItem.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieItem/MovieItem.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieItem/MovieItem.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieItem/MovieItem.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieItem/MovieItem.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieItem/MovieItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieItem/MovieItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MoviesList/MoviesList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/MoviesList/MoviesList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pagination/Pagination.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pagination/Pagination.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Search/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Search/Search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/router.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/movieDBService.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/movieDBService.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,8 +102,8 @@
       <workItem from="1656013832914" duration="2650000" />
       <workItem from="1656133032475" duration="5216000" />
       <workItem from="1656225274617" duration="34332000" />
-      <workItem from="1656346619348" duration="11247000" />
-      <workItem from="1656435392966" duration="346000" />
+      <workItem from="1656346619348" duration="10813000" />
+      <workItem from="1656398543808" duration="5917000" />
     </task>
     <servers />
   </component>
