@@ -1,23 +1,33 @@
 import { FC } from 'react';
-import { Card } from 'antd';
+import { Card, Typography } from 'antd';
+import { format } from 'date-fns';
 
+import { GenresItem } from '../router';
 import { IReqItem } from '../interfaces';
+import './MovieItem.css';
 import 'antd/dist/antd.css';
 
 const { Meta } = Card;
+const { Title, Paragraph } = Typography;
 
 export const MovieItem: FC<{ itemProps: IReqItem }> = (props: { itemProps: IReqItem }) => {
   //
   let { itemProps } = props;
   let { title, poster_path, overview, genre_ids, release_date } = itemProps;
-  console.log(poster_path);
+  const genres = genre_ids.map((item) => {
+    return (
+      <div key={Math.random() * 1000}>
+        <GenresItem GenresItemProps={item} />
+      </div>
+    );
+  });
   return (
     <>
       <Card
         className="cardContainer"
         hoverable
         bordered={false}
-        style={{ width: 454, height: 281, display: 'flex', overflow: 'hidden', fontFamily: 'Helvetica Neue' }}
+        style={{ width: 454, height: 281, display: 'flex', overflow: 'hidden' }}
         cover={
           <img
             style={{ width: 183, height: 281 }}
@@ -27,12 +37,13 @@ export const MovieItem: FC<{ itemProps: IReqItem }> = (props: { itemProps: IReqI
         }
       >
         <div className="cardDescriptionWrapper">
-          <h5>{title}</h5>
-          <div>{release_date}</div>
-          <div>{genre_ids}</div>
-          <p>{overview}</p>
+          <Title className="movieItemTitle" level={5}>
+            {title}
+          </Title>
+          <div className="releaseDate">{format(new Date(release_date), 'MMMM d, y')}</div>
+          <div className="genresWrapper">{genres}</div>
+          <Paragraph>{overview}</Paragraph>
         </div>
-
         <Meta />
       </Card>
     </>
