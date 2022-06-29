@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6364f2f7-8c03-4be6-8b07-ed3d53a253f8" name="Changes" comment="" />
+    <list default="true" id="6364f2f7-8c03-4be6-8b07-ed3d53a253f8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/GenresItem/GenresItem.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GenresItem/GenresItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieItem/MovieItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieItem/MovieItem.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieItem/MovieItem.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieItem/MovieItem.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieItem/MovieItem.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieItem/MovieItem.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieItem/MovieItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieItem/MovieItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/_fonts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/fonts/_fonts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/router.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="SCSS File" />
         <option value="TypeScript JSX File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -90,7 +103,7 @@
       <workItem from="1656133032475" duration="5216000" />
       <workItem from="1656225274617" duration="34332000" />
       <workItem from="1656346619348" duration="10813000" />
-      <workItem from="1656398543808" duration="5917000" />
+      <workItem from="1656398543808" duration="7663000" />
     </task>
     <servers />
   </component>

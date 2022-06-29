@@ -1,5 +1,5 @@
-@import "../fonts/mixins";
-@import "../fonts/fonts";
+//@import "../fonts/mixins";
+//@import "../fonts/fonts";
 
 .cardContainer {
   width: 454px;
@@ -13,4 +13,20 @@
 .cardDescriptionWrapper {
   padding: 12px 20px;
   font-family: Roboto;
+}
+
+.movieItemTitle {
+  font-size: 30px;
+  line-height: 28px;
+  font-weight: 400;
+}
+
+.genresWrapper {
+  display: flex;
+}
+
+.releaseDate {
+  color: #827E7E;
+  font-size: 12px;
+  line-height: 22px;
 }
