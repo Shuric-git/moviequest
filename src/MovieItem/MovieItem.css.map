@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["MovieItem.scss"],"names":[],"mappings":"AAAA;EACE;EACA","file":"MovieItem.css"}
+{"version":3,"sourceRoot":"","sources":["../fonts/_font-face.scss","MovieItem.scss"],"names":[],"mappings":"AACE;EACE;EACA;EACA;EACA;EACA;;AALF;EACE;EACA;EACA;EACA;EACA;;ACHJ;EACE;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA","file":"MovieItem.css"}

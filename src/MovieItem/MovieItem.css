@@ -1,6 +1,29 @@
+@font-face {
+  font-family: "Inter";
+  src: url("./static/Inter-Regular.woff2") format("woff2");
+  font-weight: 200;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TTLakes";
+  src: url("./static/TTLakes-Regular.woff2") format("woff2");
+  font-weight: 200;
+  font-display: swap;
+  font-style: normal;
+}
 .cardContainer {
-  background-color: tomato;
+  width: 454px;
+  height: 281px;
   display: flex;
+  padding: 10px;
+  overflow: hidden;
+  font-family: Roboto;
+}
+
+.cardDescriptionWrapper {
+  padding: 12px 20px;
+  font-family: Roboto;
 }
 
 /*# sourceMappingURL=MovieItem.css.map */

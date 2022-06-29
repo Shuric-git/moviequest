@@ -14,10 +14,17 @@ export const MovieItem: FC<{ itemProps: IReqItem }> = (props: { itemProps: IReqI
   return (
     <>
       <Card
+        className="cardContainer"
         hoverable
-        style={{ width: 454, display: 'flex', padding: 10 }}
-        cover={<img alt="example" src={`https://image.tmdb.org/t/p/original${poster_path}`} />}
-        extra={<span>extra</span>}
+        bordered={false}
+        style={{ width: 454, height: 281, display: 'flex', overflow: 'hidden', fontFamily: 'Helvetica Neue' }}
+        cover={
+          <img
+            style={{ width: 183, height: 281 }}
+            alt="example"
+            src={`https://image.tmdb.org/t/p/original${poster_path}`}
+          />
+        }
       >
         <div className="cardDescriptionWrapper">
           <h5>{title}</h5>
@@ -26,7 +33,7 @@ export const MovieItem: FC<{ itemProps: IReqItem }> = (props: { itemProps: IReqI
           <p>{overview}</p>
         </div>
 
-        <Meta className="cardContainer" />
+        <Meta />
       </Card>
     </>
   );
