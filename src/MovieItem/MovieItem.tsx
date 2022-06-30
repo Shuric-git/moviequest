@@ -10,14 +10,12 @@ import './MovieItem.css';
 const { Meta, Grid } = Card;
 const { Title, Paragraph } = Typography;
 
-export const MovieItem: FC<{ itemProps: IReqItem }> = (props: { itemProps: IReqItem }) => {
-  //
-  let { itemProps } = props;
+export const MovieItem: FC<{ itemProps: IReqItem }> = ({ itemProps }) => {
   let { title, poster_path, overview, genre_ids, release_date } = itemProps;
 
   const descriptionShortener = (description: string): string => {
     const overviewArr = description.split(' ');
-    overviewArr.length = 8;
+    overviewArr.length = 13;
     const shortOverview = overviewArr.join(' ');
     return shortOverview;
   };
