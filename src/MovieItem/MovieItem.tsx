@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Card, Typography, Row, Col, Rate } from 'antd';
-import { format } from 'date-fns';
+// import { format } from 'date-fns';
 
 import { GenresItem } from '../router';
 import { IReqItem } from '../interfaces';
@@ -50,7 +50,7 @@ export const MovieItem: FC<{ itemProps: IReqItem }> = ({ itemProps }) => {
               </Title>
             </Row>
             <Row style={{ marginBottom: 10 }}>
-              <div className="releaseDate">{format(new Date(release_date), 'MMMM d, y')}</div>
+              <div className="releaseDate">{release_date}</div>
             </Row>
             <Row style={{ marginBottom: 10 }}>
               <div className="genresWrapper">{genres}</div>
