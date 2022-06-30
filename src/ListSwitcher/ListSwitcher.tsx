@@ -14,10 +14,10 @@ export const ListSwitcher: FC = () => {
     <div>
       <Tabs defaultActiveKey="1" onChange={onChange}>
         <TabPane tab="Search" key="1">
-          Content of Tab Pane 1
+          -
         </TabPane>
         <TabPane tab="Rated" key="2">
-          Content of Tab Pane 2
+          -
         </TabPane>
       </Tabs>
     </div>

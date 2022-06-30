@@ -23,7 +23,6 @@ export const MoviesList: FC = () => {
   return (
     <>
       <Row gutter={[16, 16]}>{elements}</Row>
-      {/*<ul className="moviesList"></ul>*/}
     </>
   );
 };
