@@ -11,7 +11,7 @@ export class MovieDBService {
       resString += `&query=${query}&page=1&include_adult=false`;
     }
     let res = await fetch(resString);
-
+    console.log(res);
     if (!res.ok) {
       throw new Error(`could not fetch ${url}, received ${res.status}`);
     }
