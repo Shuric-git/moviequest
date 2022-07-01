@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6364f2f7-8c03-4be6-8b07-ed3d53a253f8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/MovieSearch/MovieSearch.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/error-indicator/error-indicator.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/App.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ListSwitcher/ListSwitcher.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ListSwitcher/ListSwitcher.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieItem/MovieItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieItem/MovieItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MoviesList/MoviesList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/MoviesList/MoviesList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/router.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/movieDBService.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/movieDBService.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="6364f2f7-8c03-4be6-8b07-ed3d53a253f8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
