@@ -1,5 +1,7 @@
 import { FC, KeyboardEvent, useState } from 'react';
 
+import './MovieSearch.css';
+
 export const MovieSearch: FC<{ searchMovie: (query: string) => void }> = ({ searchMovie }) => {
   const [input, setInput] = useState('');
 
@@ -11,7 +13,12 @@ export const MovieSearch: FC<{ searchMovie: (query: string) => void }> = ({ sear
 
   return (
     <>
-      <input onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => submitSearch(e)} />
+      <input
+        className="movieSearch"
+        placeholder="Type to search..."
+        onChange={(e) => setInput(e.target.value)}
+        onKeyDown={(e) => submitSearch(e)}
+      />
     </>
   );
 };

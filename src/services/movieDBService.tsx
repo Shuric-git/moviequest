@@ -5,10 +5,10 @@ export class MovieDBService {
 
   _apiKey: string = 'f7e88ab48889b711cf5ed287d894ccbc';
 
-  async fetcher(url: string, query: string) {
+  async fetcher(url: string, query: string, page: number) {
     let resString = `${this._baseUrl}${url}?api_key=${this._apiKey}&language=en-US`;
     if (url === 'search/movie') {
-      resString += `&query=${query}&page=1&include_adult=false`;
+      resString += `&query=${query}&page=${page}&include_adult=false`;
     }
     let res = await fetch(resString);
     if (!res.ok) {
@@ -17,22 +17,22 @@ export class MovieDBService {
     return await res.json();
   }
 
-  async getPopular(): Promise<Array<IReqItem>> {
-    const res: IPopular = await this.fetcher('movie/popular', '');
+  async getPopular(page: number): Promise<Array<IReqItem>> {
+    const res: IPopular = await this.fetcher('movie/popular', '', page);
     return res.results;
   }
 
-  async getSearch(query: string): Promise<Array<IReqItem>> {
-    const res: IPopular = await this.fetcher('search/movie', query);
+  async getSearch(query: string, page: number): Promise<Array<IReqItem>> {
+    const res: IPopular = await this.fetcher('search/movie', query, page);
     return res.results;
   }
 
-  async getTopRated(): Promise<Array<IReqItem>> {
-    const res: IPopular = await this.fetcher('movie/top_rated', '');
+  async getTopRated(page: number): Promise<Array<IReqItem>> {
+    const res: IPopular = await this.fetcher('movie/top_rated', '', page);
     return res.results;
   }
 
-  async getMovie(id: number) {
-    return this.fetcher(`movie/${id}`, '');
+  async getMovie(id: number, page: number) {
+    return this.fetcher(`movie/${id}`, '', page);
   }
 }

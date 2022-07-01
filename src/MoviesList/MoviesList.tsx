@@ -1,5 +1,5 @@
 import { FC, useState, useEffect } from 'react';
-import { Col, Row, Spin, Alert } from 'antd';
+import { Col, Row, Spin, Alert, Pagination } from 'antd';
 
 import { IReqItem } from '../interfaces';
 import { MovieItem, MovieDBService } from '../router';
@@ -8,8 +8,25 @@ export const MoviesList: FC<{ search: string }> = ({ search }) => {
   const [movies, setMovies] = useState<Array<IReqItem>>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<boolean>(false);
+  const [page, setPage] = useState<number>(1);
 
   const movieDBService = new MovieDBService();
+
+  const searchMovie = (search: string, page: number = 1) => {
+    const searchedArr = movieDBService.getSearch(search, page);
+    searchedArr
+      .then((data: IReqItem[]) => {
+        setMovies(data);
+        setLoading(false);
+      })
+      .catch(() => onError());
+  };
+
+  const choosePage = (currentPage: number) => {
+    console.log(currentPage);
+    setPage(currentPage);
+    searchMovie(search, currentPage);
+  };
 
   const onError: () => void = () => {
     setError(true);
@@ -18,13 +35,7 @@ export const MoviesList: FC<{ search: string }> = ({ search }) => {
 
   console.log(search);
   useEffect(() => {
-    const topRatedArr = movieDBService.getSearch(search);
-    topRatedArr
-      .then((data: IReqItem[]) => {
-        setMovies(data);
-        setLoading(false);
-      })
-      .catch(() => onError());
+    searchMovie(search);
     // eslint-disable-next-line
   }, [search]);
   const elements = movies.map((item: IReqItem) => {
@@ -42,7 +53,12 @@ export const MoviesList: FC<{ search: string }> = ({ search }) => {
       ) : loading ? (
         <Spin size="large" />
       ) : (
-        <Row gutter={[16, 16]}>{elements}</Row>
+        <>
+          <Row style={{ marginBottom: 30 }} gutter={[16, 16]}>
+            {elements}
+          </Row>
+          <Pagination current={page} onChange={(current) => choosePage(current)} defaultCurrent={1} total={50} />
+        </>
       )}
     </>
   );

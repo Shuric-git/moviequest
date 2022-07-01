@@ -4,7 +4,7 @@ import { MoviesList, ListSwitcher, MovieSearch } from '../router';
 import './App.css';
 
 function App() {
-  const [search, setSearch] = useState('buffalo');
+  const [search, setSearch] = useState('future');
   // const movieDBService = new MovieDBService();
 
   const searchMovie = (query: string) => {

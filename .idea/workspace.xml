@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6364f2f7-8c03-4be6-8b07-ed3d53a253f8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/MovieSearch/MovieSearch.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MovieSearch/MovieSearch.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MovieSearch/MovieSearch.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ListSwitcher/ListSwitcher.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ListSwitcher/ListSwitcher.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MovieItem/MovieItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieItem/MovieItem.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MovieSearch/MovieSearch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieSearch/MovieSearch.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MoviesList/MoviesList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/MoviesList/MoviesList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Search/Search.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/error-indicator/error-indicator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/error-indicator/error-indicator.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/router.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/movieDBService.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/movieDBService.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="SCSS File" />
         <option value="TypeScript JSX File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -59,7 +58,7 @@
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "D:\\HTML\\Kata\\moviedb\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "preferences.general",
+    "settings.editor.selected.configurable": "preferences.editor",
     "ts.external.directory.path": "D:\\HTML\\Kata\\moviedb\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -102,6 +101,7 @@
       <workItem from="1656225274617" duration="34332000" />
       <workItem from="1656346619348" duration="10813000" />
       <workItem from="1656398543808" duration="7663000" />
+      <workItem from="1656704768040" duration="4080000" />
     </task>
     <servers />
   </component>
