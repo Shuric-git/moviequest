@@ -32,7 +32,7 @@ export const MovieItem: FC<{ itemProps: IReqItem }> = ({ itemProps }) => {
       <Card
         className="cardContainer"
         hoverable
-        bordered={false}
+        // bordered={false}
         style={{ width: 454, height: 281, display: 'flex', overflow: 'hidden', padding: 0 }}
         cover={
           <Image
@@ -69,3 +69,4 @@ export const MovieItem: FC<{ itemProps: IReqItem }> = ({ itemProps }) => {
     </>
   );
 };
+// format(new Date(release_date), 'MMMM d, y')

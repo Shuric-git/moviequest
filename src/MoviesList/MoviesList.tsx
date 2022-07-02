@@ -22,11 +22,10 @@ export const MoviesList: FC<{ search: string }> = ({ search }) => {
       .catch(() => onError());
   };
 
-  const choosePage = (currentPage: number) => {
-    console.log(currentPage);
-    setPage(currentPage);
-    searchMovie(search, currentPage);
-  };
+  // const choosePage = (currentPage: number) => {
+  //   console.log(currentPage);
+  //   setPage(currentPage);
+  // };
 
   const onError: () => void = () => {
     setError(true);
@@ -35,9 +34,9 @@ export const MoviesList: FC<{ search: string }> = ({ search }) => {
 
   console.log(search);
   useEffect(() => {
-    searchMovie(search);
+    searchMovie(search, page);
     // eslint-disable-next-line
-  }, [search]);
+  }, [search, page]);
   const elements = movies.map((item: IReqItem) => {
     return (
       <Col span={12} key={Math.random() * 1000}>
@@ -57,7 +56,7 @@ export const MoviesList: FC<{ search: string }> = ({ search }) => {
           <Row style={{ marginBottom: 30 }} gutter={[16, 16]}>
             {elements}
           </Row>
-          <Pagination current={page} onChange={(current) => choosePage(current)} defaultCurrent={1} total={50} />
+          <Pagination current={page} onChange={(current) => setPage(current)} defaultCurrent={1} total={50} />
         </>
       )}
     </>
