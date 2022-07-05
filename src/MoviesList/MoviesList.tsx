@@ -1,38 +1,19 @@
-import { FC, useState, useEffect } from 'react';
+import { FC, useEffect } from 'react';
 import { Col, Row, Spin, Alert, Pagination } from 'antd';
 
 import { IReqItem } from '../interfaces';
-import { MovieItem, MovieDBService } from '../router';
+import { MovieItem } from '../router';
 
-export const MoviesList: FC<{ search: string }> = ({ search }) => {
-  const [movies, setMovies] = useState<Array<IReqItem>>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<boolean>(false);
-  const [page, setPage] = useState<number>(1);
-
-  const movieDBService = new MovieDBService();
-
-  const searchMovie = (search: string, page: number = 1) => {
-    const searchedArr = movieDBService.getSearch(search, page);
-    searchedArr
-      .then((data: IReqItem[]) => {
-        setMovies(data);
-        setLoading(false);
-      })
-      .catch(() => onError());
-  };
-
-  // const choosePage = (currentPage: number) => {
-  //   console.log(currentPage);
-  //   setPage(currentPage);
-  // };
-
-  const onError: () => void = () => {
-    setError(true);
-    setLoading(false);
-  };
-
-  console.log(search);
+export const MoviesList: FC<{
+  choosePage: (current: number) => void;
+  searchMovie: (search: string, page: number) => void;
+  search: string;
+  page: number;
+  movies: IReqItem[];
+  loading: boolean;
+  error: boolean;
+  totalPages: number;
+}> = ({ choosePage, searchMovie, search, page, movies, loading, error, totalPages }) => {
   useEffect(() => {
     searchMovie(search, page);
     // eslint-disable-next-line
@@ -56,7 +37,16 @@ export const MoviesList: FC<{ search: string }> = ({ search }) => {
           <Row style={{ marginBottom: 30 }} gutter={[16, 16]}>
             {elements}
           </Row>
-          <Pagination current={page} onChange={(current) => setPage(current)} defaultCurrent={1} total={50} />
+          <Pagination
+            current={page}
+            onChange={(current) => {
+              choosePage(current);
+            }}
+            defaultCurrent={1}
+            total={totalPages}
+            pageSize={20}
+            showSizeChanger={false}
+          />
         </>
       )}
     </>

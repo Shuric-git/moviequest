@@ -16,6 +16,11 @@ export class MovieDBService {
     }
     return await res.json();
   }
+  // https://api.themoviedb.org/3/authentication/guest_session/new?api_key=<<api_key>>
+  async getGuestSession() {
+    const request: any = await fetch(`${this._baseUrl}authentication/guest_session/new?api_key=${this._apiKey}`);
+    return request.json();
+  }
 
   async getPopular(page: number): Promise<Array<IReqItem>> {
     const res: IPopular = await this.fetcher('movie/popular', '', page);
@@ -23,13 +28,13 @@ export class MovieDBService {
   }
 
   async getSearch(query: string, page: number): Promise<Array<IReqItem>> {
-    const res: IPopular = await this.fetcher('search/movie', query, page);
-    return res.results;
+    const res: any = await this.fetcher('search/movie', query, page);
+    return res;
   }
 
   async getTopRated(page: number): Promise<Array<IReqItem>> {
-    const res: IPopular = await this.fetcher('movie/top_rated', '', page);
-    return res.results;
+    const res: any = await this.fetcher('movie/top_rated', '', page);
+    return await res.json();
   }
 
   async getMovie(id: number, page: number) {
