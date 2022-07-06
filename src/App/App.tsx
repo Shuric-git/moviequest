@@ -11,11 +11,17 @@ function App() {
   const [error, setError] = useState<boolean>(false);
   const [page, setPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(1);
+  // const [session, setSession] = useState('');
 
   const movieDBService = new MovieDBService();
 
   useEffect(() => {
-    console.log(movieDBService.getGuestSession());
+    let guestSession = movieDBService.getGuestSession();
+    guestSession.then((data: any) => {
+      // setSession(data.guest_session_id);
+
+      movieDBService.rateMovie(3, data.guest_session_id, 7);
+    });
   }, []);
 
   const searchMovie = (search: string, page: number = 1) => {
@@ -23,6 +29,7 @@ function App() {
     const searchedArr = movieDBService.getSearch(search, page);
     searchedArr
       .then((data: any) => {
+        console.log(data);
         setMovies(data.results);
         setTotalPages(data.total_results);
         setSearch(search);
@@ -41,6 +48,10 @@ function App() {
     setPage(current);
   };
 
+  const rateMovie = (movieId: number, rating: number) => {
+    console.log(movieId, rating);
+  };
+
   return (
     <div className="BG">
       <div className="container">
@@ -55,6 +66,7 @@ function App() {
           totalPages={totalPages}
           choosePage={choosePage}
           searchMovie={searchMovie}
+          rateMovie={rateMovie}
         />
       </div>
     </div>

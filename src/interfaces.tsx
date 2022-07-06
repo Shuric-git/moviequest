@@ -13,6 +13,7 @@ interface IReqItem {
   video: boolean;
   vote_average: number;
   vote_count: number;
+  rateMovie: (movieId: { id: number }, rating: { e: any }) => void;
 }
 
 interface IPopular {

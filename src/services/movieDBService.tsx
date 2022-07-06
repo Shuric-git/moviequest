@@ -19,7 +19,24 @@ export class MovieDBService {
   // https://api.themoviedb.org/3/authentication/guest_session/new?api_key=<<api_key>>
   async getGuestSession() {
     const request: any = await fetch(`${this._baseUrl}authentication/guest_session/new?api_key=${this._apiKey}`);
-    return request.json();
+    return await request.json();
+  }
+
+  async rateMovie(movie_id: number, guestSession: string, rating: number) {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/${movie_id}/rating?api_key=${this._apiKey}&guest_session_id=${guestSession}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+        },
+        body: JSON.stringify({
+          value: 7,
+        }),
+      }
+    );
+    // let result = await response.json();
+    // console.log(result);
   }
 
   async getPopular(page: number): Promise<Array<IReqItem>> {
