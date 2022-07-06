@@ -11,7 +11,7 @@ const { Meta, Grid } = Card;
 const { Title, Paragraph } = Typography;
 
 export const MovieItem: FC<{ itemProps: IReqItem }> = ({ itemProps }) => {
-  let { title, poster_path, overview, genre_ids, release_date } = itemProps;
+  let { id, title, poster_path, overview, genre_ids, release_date, rateMovie } = itemProps;
 
   const descriptionShortener = (description: string): string => {
     const overviewArr = description.split(' ');
@@ -61,7 +61,15 @@ export const MovieItem: FC<{ itemProps: IReqItem }> = ({ itemProps }) => {
               <Paragraph style={{ overflow: 'hidden' }}>{descriptionShortener(overview)}</Paragraph>
             </Row>
             <Row style={{ position: 'absolute', bottom: 0, height: 46, alignItems: 'center' }}>
-              <Rate style={{ fontSize: 15 }} count={10} allowHalf defaultValue={2.5} />
+              <Rate
+                style={{ fontSize: 15 }}
+                count={10}
+                allowHalf
+                defaultValue={2.5}
+                onChange={(e) => {
+                  console.log(id, e);
+                }}
+              />
             </Row>
           </Col>
         </Grid>

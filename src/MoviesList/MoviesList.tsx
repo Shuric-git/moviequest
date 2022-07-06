@@ -7,14 +7,16 @@ import { MovieItem } from '../router';
 export const MoviesList: FC<{
   choosePage: (current: number) => void;
   searchMovie: (search: string, page: number) => void;
+  rateMovie: (movieId: number, rating: number) => void;
   search: string;
   page: number;
   movies: IReqItem[];
   loading: boolean;
   error: boolean;
   totalPages: number;
-}> = ({ choosePage, searchMovie, search, page, movies, loading, error, totalPages }) => {
+}> = ({ choosePage, searchMovie, rateMovie, search, page, movies, loading, error, totalPages }) => {
   useEffect(() => {
+    console.log(rateMovie);
     searchMovie(search, page);
     // eslint-disable-next-line
   }, [search, page]);

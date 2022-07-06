@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6364f2f7-8c03-4be6-8b07-ed3d53a253f8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieItem/MovieItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieItem/MovieItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MoviesList/MoviesList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/MoviesList/MoviesList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/movieDBService.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/movieDBService.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +46,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/HTML/Kata/moviedb&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/epixx/Kata/todoQuest/todoquest&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
@@ -51,7 +56,7 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\HTML\\Kata\\moviedb\\node_modules\\prettier&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\HTML\\Kata\\moviedb\\node_modules\\typescript\\lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\epixx\\Kata\\moviequest\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
