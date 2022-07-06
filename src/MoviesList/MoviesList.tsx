@@ -1,32 +1,23 @@
-import { FC, useState, useEffect } from 'react';
-import { Col, Row, Spin, Alert } from 'antd';
+import { FC, useEffect } from 'react';
+import { Col, Row, Spin, Alert, Pagination } from 'antd';
 
 import { IReqItem } from '../interfaces';
-import { MovieItem, MovieDBService } from '../router';
+import { MovieItem } from '../router';
 
-export const MoviesList: FC<{ search: string }> = ({ search }) => {
-  const [movies, setMovies] = useState<Array<IReqItem>>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<boolean>(false);
-
-  const movieDBService = new MovieDBService();
-
-  const onError: () => void = () => {
-    setError(true);
-    setLoading(false);
-  };
-
-  console.log(search);
+export const MoviesList: FC<{
+  choosePage: (current: number) => void;
+  searchMovie: (search: string, page: number) => void;
+  search: string;
+  page: number;
+  movies: IReqItem[];
+  loading: boolean;
+  error: boolean;
+  totalPages: number;
+}> = ({ choosePage, searchMovie, search, page, movies, loading, error, totalPages }) => {
   useEffect(() => {
-    const topRatedArr = movieDBService.getSearch(search);
-    topRatedArr
-      .then((data: IReqItem[]) => {
-        setMovies(data);
-        setLoading(false);
-      })
-      .catch(() => onError());
+    searchMovie(search, page);
     // eslint-disable-next-line
-  }, [search]);
+  }, [search, page]);
   const elements = movies.map((item: IReqItem) => {
     return (
       <Col span={12} key={Math.random() * 1000}>
@@ -42,7 +33,21 @@ export const MoviesList: FC<{ search: string }> = ({ search }) => {
       ) : loading ? (
         <Spin size="large" />
       ) : (
-        <Row gutter={[16, 16]}>{elements}</Row>
+        <>
+          <Row style={{ marginBottom: 30 }} gutter={[16, 16]}>
+            {elements}
+          </Row>
+          <Pagination
+            current={page}
+            onChange={(current) => {
+              choosePage(current);
+            }}
+            defaultCurrent={1}
+            total={totalPages}
+            pageSize={20}
+            showSizeChanger={false}
+          />
+        </>
       )}
     </>
   );

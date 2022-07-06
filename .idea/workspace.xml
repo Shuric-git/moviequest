@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/src/MovieItem/MovieItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieItem/MovieItem.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MovieSearch/MovieSearch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieSearch/MovieSearch.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MoviesList/MoviesList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/MoviesList/MoviesList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/router.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/movieDBService.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/movieDBService.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="SCSS File" />
         <option value="TypeScript JSX File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -100,6 +99,15 @@
       <workItem from="1656225274617" duration="34332000" />
       <workItem from="1656346619348" duration="10813000" />
       <workItem from="1656398543808" duration="7663000" />
+      <workItem from="1656704768040" duration="4417000" />
+      <workItem from="1656739613579" duration="21885000" />
+      <workItem from="1656783636647" duration="9653000" />
+      <workItem from="1656827267679" duration="55000" />
+      <workItem from="1656832329005" duration="158000" />
+      <workItem from="1656833166508" duration="866000" />
+      <workItem from="1656964101210" duration="884000" />
+      <workItem from="1657038473295" duration="39000" />
+      <workItem from="1657043513360" duration="4000000" />
     </task>
     <servers />
   </component>

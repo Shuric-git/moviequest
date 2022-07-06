@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { Card, Image, Typography, Row, Col, Rate } from 'antd';
-// import { format } from 'date-fns';
+import { Card, Typography, Row, Col, Rate, Image } from 'antd';
+import { format } from 'date-fns';
 
 import { GenresItem } from '../router';
 import { IReqItem } from '../interfaces';
@@ -32,7 +32,6 @@ export const MovieItem: FC<{ itemProps: IReqItem }> = ({ itemProps }) => {
       <Card
         className="cardContainer"
         hoverable
-        bordered={false}
         style={{ width: 454, height: 281, display: 'flex', overflow: 'hidden', padding: 0 }}
         cover={
           <Image
@@ -51,7 +50,9 @@ export const MovieItem: FC<{ itemProps: IReqItem }> = ({ itemProps }) => {
               </Title>
             </Row>
             <Row style={{ marginBottom: 10 }}>
-              <div className="releaseDate">{release_date}</div>
+              <div className="releaseDate">
+                {release_date ? format(new Date(release_date), 'MMMM d, y') : 'дата выхода неизвестна'}
+              </div>
             </Row>
             <Row style={{ marginBottom: 10 }}>
               <div className="genresWrapper">{genres}</div>
