@@ -19,7 +19,8 @@ export const MovieItem: FC<{ itemProps: IReqItem; rateMovie: (movieId: number, r
 
   const [movieRating, setMovieRating] = useState(0);
   useEffect(() => {
-    setMovieRating(Number(localStorage.getItem(String(id)) || '0'));
+    localStorage.getItem('movieRating' || '0');
+    // setMovieRating(Number(localStorage.getItem(String(id)) || '0'));
   }, []);
 
   const descriptionShortener = (description: string): string => {
@@ -30,14 +31,16 @@ export const MovieItem: FC<{ itemProps: IReqItem; rateMovie: (movieId: number, r
   };
 
   const theme = useContext(GenresContext);
-  console.log(theme);
+  // console.log(theme.genres);
 
-  const genres = genre_ids.map((item) => {
-    return (
-      <div key={Math.random() * 1000}>
-        <GenresItem GenresItemProps={item} />
-      </div>
-    );
+  const genres = theme.genres.map((item: { id: string; name: string }) => {
+    if (genre_ids.includes(item.id)) {
+      return (
+        <div key={Math.random() * 1000}>
+          <GenresItem GenresItemProps={item.name} />
+        </div>
+      );
+    }
   });
   return (
     <>
@@ -82,7 +85,8 @@ export const MovieItem: FC<{ itemProps: IReqItem; rateMovie: (movieId: number, r
                 onChange={(ratingCounter) => {
                   rateMovie(id, ratingCounter);
                   setMovieRating(ratingCounter);
-                  localStorage.setItem(String(id), String(ratingCounter));
+                  localStorage.setItem('movieRatings', JSON.stringify({ id: ratingCounter }));
+                  console.log(localStorage.getItem('movieRatings' || '0'));
                 }}
               />
             </Row>
