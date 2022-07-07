@@ -27,7 +27,6 @@ function App() {
     genres.then((data) => {
       setGenres(data);
     });
-    console.log(genres);
   }, []);
 
   const searchMovie = (search: string, page: number = 1) => {
@@ -61,7 +60,6 @@ function App() {
   const getRated = () => {
     let rated = movieDBService.getRated(session);
     rated.then((data) => {
-      console.log(data);
       setMovies(data.results);
       setTotalPages(data.total_results);
       setShowSearch(false);

@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6364f2f7-8c03-4be6-8b07-ed3d53a253f8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/GenresContext/GenresContext.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ListSwitcher/ListSwitcher.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ListSwitcher/ListSwitcher.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GenresContext/GenresContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/GenresContext/GenresContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieItem/MovieItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieItem/MovieItem.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieItem/MovieItem.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieItem/MovieItem.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieItem/MovieItem.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieItem/MovieItem.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MovieItem/MovieItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieItem/MovieItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MoviesList/MoviesList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/MoviesList/MoviesList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/movieDBService.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/movieDBService.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +57,7 @@
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "D:\\HTML\\Kata\\moviedb\\node_modules\\prettier",
     "settings.editor.selected.configurable": "preferences.general",
-    "ts.external.directory.path": "D:\\HTML\\Kata\\moviedb\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\epixx\\Kata\\moviequest\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
