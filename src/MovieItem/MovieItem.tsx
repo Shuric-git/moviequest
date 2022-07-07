@@ -15,12 +15,11 @@ export const MovieItem: FC<{ itemProps: IReqItem; rateMovie: (movieId: number, r
   itemProps,
   rateMovie,
 }) => {
-  let { id, title, poster_path, overview, genre_ids, release_date } = itemProps;
+  let { id, title, poster_path, overview, genre_ids, release_date, vote_average } = itemProps;
 
   const [movieRating, setMovieRating] = useState(0);
   useEffect(() => {
-    localStorage.getItem('movieRating' || '0');
-    // setMovieRating(Number(localStorage.getItem(String(id)) || '0'));
+    setMovieRating(Number(localStorage.getItem(String(id)) || '0'));
   }, []);
 
   const descriptionShortener = (description: string): string => {
@@ -29,10 +28,19 @@ export const MovieItem: FC<{ itemProps: IReqItem; rateMovie: (movieId: number, r
     const shortOverview = overviewArr.join(' ');
     return shortOverview;
   };
+  let circleClass = 'circle';
+
+  if (vote_average < 3) {
+    circleClass = 'circle circle-red';
+  } else if (vote_average >= 3 && vote_average < 5) {
+    circleClass = 'circle circle-orange';
+  } else if (vote_average >= 5 && vote_average < 7) {
+    circleClass = 'circle circle-yellow';
+  } else if (vote_average >= 7) {
+    circleClass = 'circle circle-green';
+  }
 
   const theme = useContext(GenresContext);
-  // console.log(theme.genres);
-
   const genres = theme.genres.map((item: { id: string; name: string }) => {
     if (genre_ids.includes(item.id)) {
       return (
@@ -63,6 +71,11 @@ export const MovieItem: FC<{ itemProps: IReqItem; rateMovie: (movieId: number, r
               <Title className="movieItemTitle" level={5}>
                 {title}
               </Title>
+              <div className="averageRating">
+                <div className={circleClass}>
+                  <span className="averageRatingCounter">{vote_average}</span>
+                </div>
+              </div>
             </Row>
             <Row style={{ marginBottom: 10 }}>
               <div className="releaseDate">
@@ -85,8 +98,7 @@ export const MovieItem: FC<{ itemProps: IReqItem; rateMovie: (movieId: number, r
                 onChange={(ratingCounter) => {
                   rateMovie(id, ratingCounter);
                   setMovieRating(ratingCounter);
-                  localStorage.setItem('movieRatings', JSON.stringify({ id: ratingCounter }));
-                  console.log(localStorage.getItem('movieRatings' || '0'));
+                  localStorage.setItem(String(id), String(ratingCounter));
                 }}
               />
             </Row>

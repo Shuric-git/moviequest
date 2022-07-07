@@ -4,7 +4,6 @@
     <list default="true" id="6364f2f7-8c03-4be6-8b07-ed3d53a253f8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GenresContext/GenresContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/GenresContext/GenresContext.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MovieItem/MovieItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieItem/MovieItem.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MovieItem/MovieItem.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieItem/MovieItem.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MovieItem/MovieItem.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieItem/MovieItem.scss" afterDir="false" />

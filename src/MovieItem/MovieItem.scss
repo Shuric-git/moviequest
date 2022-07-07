@@ -6,7 +6,6 @@
   height: 281px;
   display: flex;
   padding: 10px;
-  overflow: hidden;
 }
 
 .cardDescriptionWrapper {
@@ -17,6 +16,47 @@
   font-size: 30px;
   line-height: 28px;
   font-weight: 400;
+  width: 85%;
+}
+
+.averageRating {
+  top: 0;
+  right: 10px;
+  .circle{
+    display: flex;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #E9D100;
+    border-radius: 50px;
+    .averageRatingCounter {
+      font-size: 12px;
+      line-height: 24px;
+    }
+  }
+}
+.averageRating{
+  .circle-red {
+    border-color: #E90000;
+  }
+}
+
+.averageRating{
+  .circle-orange {
+    border-color: #E97E00;
+  }
+}
+
+.averageRating{
+  .circle-yellow {
+    border-color: #E9D100;
+  }
+}
+
+.averageRating{
+  .circle-green {
+    border-color: #66E900;
+  }
 }
 
 .genresWrapper {

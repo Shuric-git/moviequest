@@ -27,6 +27,13 @@ function App() {
     genres.then((data) => {
       setGenres(data);
     });
+    // return () => {
+    //   for (let i = 0; i < localStorage.length; i++) {
+    //     let key: any = localStorage.key(i);
+    //     console.log(key);
+    //     localStorage.removeItem(key);
+    //   }
+    // };
   }, []);
 
   const searchMovie = (search: string, page: number = 1) => {
