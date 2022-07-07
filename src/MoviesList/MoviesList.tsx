@@ -14,16 +14,15 @@ export const MoviesList: FC<{
   loading: boolean;
   error: boolean;
   totalPages: number;
-}> = ({ choosePage, searchMovie, rateMovie, search, page, movies, loading, error, totalPages }) => {
+}> = ({ choosePage, rateMovie, searchMovie, search, page, movies, loading, error, totalPages }) => {
   useEffect(() => {
-    console.log(rateMovie);
     searchMovie(search, page);
     // eslint-disable-next-line
   }, [search, page]);
   const elements = movies.map((item: IReqItem) => {
     return (
       <Col span={12} key={Math.random() * 1000}>
-        <MovieItem itemProps={item} />
+        <MovieItem itemProps={item} rateMovie={rateMovie} />
       </Col>
     );
   });

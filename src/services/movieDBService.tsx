@@ -22,7 +22,7 @@ export class MovieDBService {
     return await request.json();
   }
 
-  async rateMovie(movie_id: number, guestSession: string, rating: number) {
+  async rateMovie(movie_id: number, rating: number, guestSession: string) {
     const response = await fetch(
       `https://api.themoviedb.org/3/movie/${movie_id}/rating?api_key=${this._apiKey}&guest_session_id=${guestSession}`,
       {
@@ -31,10 +31,11 @@ export class MovieDBService {
           'Content-Type': 'application/json;charset=utf-8',
         },
         body: JSON.stringify({
-          value: 7,
+          value: rating,
         }),
       }
     );
+    return response;
     // let result = await response.json();
     // console.log(result);
   }
@@ -51,10 +52,22 @@ export class MovieDBService {
 
   async getTopRated(page: number): Promise<Array<IReqItem>> {
     const res: any = await this.fetcher('movie/top_rated', '', page);
+    return res;
+  }
+  // https://api.themoviedb.org/3/account/{account_id}/rated/movies?api_key=<<api_key>>&language=en-US&sort_by=created_at.asc&page=1
+  async getRated(session: string) {
+    const res: any = await fetch(
+      `https://api.themoviedb.org/3/guest_session/${session}/rated/movies?api_key=${this._apiKey}&language=en-US&sort_by=created_at.asc`
+    );
     return await res.json();
   }
 
   async getMovie(id: number, page: number) {
     return this.fetcher(`movie/${id}`, '', page);
+  }
+  // https://api.themoviedb.org/3/genre/movie/list?api_key=<<api_key>>&language=en-US
+  async getGenres() {
+    const res = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${this._apiKey}&language=en-US`);
+    return await res.json();
   }
 }

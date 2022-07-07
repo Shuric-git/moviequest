@@ -1,7 +1,8 @@
-import { FC } from 'react';
+import { FC, useContext, useEffect, useState } from 'react';
 import { Card, Typography, Row, Col, Rate, Image } from 'antd';
 import { format } from 'date-fns';
 
+import { GenresContext } from '../GenresContext/GenresContext';
 import { GenresItem } from '../router';
 import { IReqItem } from '../interfaces';
 import 'antd/dist/antd.css';
@@ -10,8 +11,16 @@ import './MovieItem.css';
 const { Meta, Grid } = Card;
 const { Title, Paragraph } = Typography;
 
-export const MovieItem: FC<{ itemProps: IReqItem }> = ({ itemProps }) => {
-  let { id, title, poster_path, overview, genre_ids, release_date, rateMovie } = itemProps;
+export const MovieItem: FC<{ itemProps: IReqItem; rateMovie: (movieId: number, rating: number) => void }> = ({
+  itemProps,
+  rateMovie,
+}) => {
+  let { id, title, poster_path, overview, genre_ids, release_date } = itemProps;
+
+  const [movieRating, setMovieRating] = useState(0);
+  useEffect(() => {
+    setMovieRating(Number(localStorage.getItem(String(id)) || '0'));
+  }, []);
 
   const descriptionShortener = (description: string): string => {
     const overviewArr = description.split(' ');
@@ -19,6 +28,9 @@ export const MovieItem: FC<{ itemProps: IReqItem }> = ({ itemProps }) => {
     const shortOverview = overviewArr.join(' ');
     return shortOverview;
   };
+
+  const theme = useContext(GenresContext);
+  console.log(theme);
 
   const genres = genre_ids.map((item) => {
     return (
@@ -65,9 +77,12 @@ export const MovieItem: FC<{ itemProps: IReqItem }> = ({ itemProps }) => {
                 style={{ fontSize: 15 }}
                 count={10}
                 allowHalf
-                defaultValue={2.5}
-                onChange={(e) => {
-                  console.log(id, e);
+                defaultValue={0}
+                value={movieRating}
+                onChange={(ratingCounter) => {
+                  rateMovie(id, ratingCounter);
+                  setMovieRating(ratingCounter);
+                  localStorage.setItem(String(id), String(ratingCounter));
                 }}
               />
             </Row>

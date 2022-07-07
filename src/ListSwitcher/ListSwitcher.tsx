@@ -5,9 +5,18 @@ import 'antd/dist/antd.css';
 
 const { TabPane } = Tabs;
 
-export const ListSwitcher: FC = () => {
+export const ListSwitcher: FC<{ getRated: () => void; searchMovie: (query: string) => void; search: string }> = ({
+  getRated,
+  searchMovie,
+  search,
+}) => {
   const onChange = (key: string) => {
-    console.log(key);
+    if (key === '1') {
+      searchMovie(search);
+    }
+    if (key === '2') {
+      getRated();
+    }
   };
 
   return (
