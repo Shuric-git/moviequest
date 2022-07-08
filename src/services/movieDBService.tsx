@@ -68,6 +68,7 @@ export class MovieDBService {
   // https://api.themoviedb.org/3/genre/movie/list?api_key=<<api_key>>&language=en-US
   async getGenres() {
     const res = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${this._apiKey}&language=en-US`);
+    // console.log(res);
     return await res.json();
   }
 }

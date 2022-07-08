@@ -14,26 +14,20 @@ function App() {
   const [page, setPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(1);
   const [session, setSession] = useState('');
-  const [genres, setGenres] = useState<any>({});
+  const [genresState, setGenres] = useState<any>([]);
 
   const movieDBService = new MovieDBService();
 
   useEffect(() => {
+    let genres = movieDBService.getGenres();
+    genres.then((data) => {
+      setGenres(data.genres);
+    });
     let guestSession = movieDBService.getGuestSession();
     guestSession.then((data: any) => {
       setSession(data.guest_session_id);
     });
-    let genres = movieDBService.getGenres();
-    genres.then((data) => {
-      setGenres(data);
-    });
-    // return () => {
-    //   for (let i = 0; i < localStorage.length; i++) {
-    //     let key: any = localStorage.key(i);
-    //     console.log(key);
-    //     localStorage.removeItem(key);
-    //   }
-    // };
+    localStorage.clear();
   }, []);
 
   const searchMovie = (search: string, page: number = 1) => {
@@ -73,8 +67,36 @@ function App() {
     });
   };
 
+  // const getWidth = () => window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+  // function useCurrentWidth() {
+  //   // save current window width in the state object
+  //   let [width, setWidth] = useState(getWidth());
+  //
+  //   // in this case useEffect will execute only once because
+  //   // it does not have any dependencies.
+  //   useEffect(() => {
+  //     const resizeListener = () => {
+  //       // change width from the state object
+  //       setWidth(getWidth());
+  //     };
+  //     // set resize listener
+  //     window.addEventListener('resize', resizeListener);
+  //
+  //     // clean up function
+  //     return () => {
+  //       // remove resize listener
+  //       window.removeEventListener('resize', resizeListener);
+  //     };
+  //   }, []);
+  //
+  //   return width;
+  // }
+
+  // console.log(useCurrentWidth());
+
   return (
-    <GenresContext.Provider value={genres}>
+    <GenresContext.Provider value={genresState}>
       <div className="BG">
         <div className="container">
           <ListSwitcher getRated={getRated} searchMovie={searchMovie} search={search} />

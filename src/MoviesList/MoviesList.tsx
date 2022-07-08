@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Col, Row, Spin, Alert, Pagination } from 'antd';
 
 import { IReqItem } from '../interfaces';
@@ -15,16 +15,26 @@ export const MoviesList: FC<{
   error: boolean;
   totalPages: number;
 }> = ({ choosePage, rateMovie, searchMovie, search, page, movies, loading, error, totalPages }) => {
+  const [colSpan, setColSpan] = useState(12);
+
   useEffect(() => {
     searchMovie(search, page);
+    if (document.documentElement.clientWidth < 420) {
+      console.log(document.documentElement.clientWidth);
+      setColSpan(24);
+    }
     // eslint-disable-next-line
   }, [search, page]);
   const elements = movies.map((item: IReqItem) => {
+    console.log(colSpan);
     return (
-      <Col span={12} key={Math.random() * 1000}>
+      <Col span={colSpan} key={Math.random() * 1000}>
         <MovieItem itemProps={item} rateMovie={rateMovie} />
       </Col>
     );
+  });
+  window.addEventListener('resize', () => {
+    document.documentElement.clientWidth < 420 ? setColSpan(24) : setColSpan(12);
   });
 
   return (
@@ -35,7 +45,7 @@ export const MoviesList: FC<{
         <Spin size="large" />
       ) : (
         <>
-          <Row style={{ marginBottom: 30 }} gutter={[16, 16]}>
+          <Row style={{ marginBottom: 30 }} gutter={[36, 34]}>
             {elements}
           </Row>
           <Pagination
