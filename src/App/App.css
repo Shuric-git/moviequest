@@ -12,5 +12,10 @@
   padding: 21px 40px;
   background-color: #FFFFFF;
 }
+@media (max-width: 420px) {
+  .container {
+    padding: 21px 10px;
+  }
+}
 
 /*# sourceMappingURL=App.css.map */

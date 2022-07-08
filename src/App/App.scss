@@ -11,4 +11,7 @@
   margin-right: auto;
   padding: 21px 40px;
   background-color: #FFFFFF;
+  @media (max-width: 420px) {
+    padding: 21px 10px;
+  }
 }
