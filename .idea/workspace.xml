@@ -6,15 +6,9 @@
       <change beforePath="$PROJECT_DIR$/src/App/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App/App.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GenresItem/GenresItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/GenresItem/GenresItem.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GenresItem/GenresItem.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/GenresItem/GenresItem.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GenresItem/GenresItem.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/GenresItem/GenresItem.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MovieItem/MovieItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieItem/MovieItem.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MovieItem/MovieItem.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieItem/MovieItem.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MovieItem/MovieItem.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieItem/MovieItem.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovieItem/MovieItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieItem/MovieItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MoviesList/MoviesList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/MoviesList/MoviesList.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +47,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/epixx/Kata/todoQuest/todoquest",
+    "last_opened_file_path": "D:/HTML/Kata/moviedb",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
@@ -116,6 +110,8 @@
       <workItem from="1657043513360" duration="5165000" />
       <workItem from="1657121653202" duration="295000" />
       <workItem from="1657298958235" duration="319000" />
+      <workItem from="1657343643601" duration="102000" />
+      <workItem from="1657355749324" duration="936000" />
     </task>
     <servers />
   </component>
