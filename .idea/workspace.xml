@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6364f2f7-8c03-4be6-8b07-ed3d53a253f8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +41,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/HTML/Kata/moviedb",
+    "last_opened_file_path": "D:/HTML/Kata/todoquest",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
@@ -105,7 +105,8 @@
       <workItem from="1657121653202" duration="295000" />
       <workItem from="1657298958235" duration="319000" />
       <workItem from="1657343643601" duration="102000" />
-      <workItem from="1657355749324" duration="1252000" />
+      <workItem from="1657355749324" duration="1877000" />
+      <workItem from="1657430803605" duration="21000" />
     </task>
     <servers />
   </component>
