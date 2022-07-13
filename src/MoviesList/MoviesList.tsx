@@ -20,13 +20,10 @@ export const MoviesList: FC<{
   useEffect(() => {
     searchMovie(search, page);
     if (document.documentElement.clientWidth < 420) {
-      console.log(document.documentElement.clientWidth);
       setColSpan(24);
     }
-    // eslint-disable-next-line
   }, [search, page]);
   const elements = movies.map((item: IReqItem) => {
-    console.log(colSpan);
     return (
       <Col span={colSpan} key={Math.random() * 1000}>
         <MovieItem itemProps={item} rateMovie={rateMovie} />
@@ -34,7 +31,7 @@ export const MoviesList: FC<{
     );
   });
   window.addEventListener('resize', () => {
-    document.documentElement.clientWidth < 420 ? setColSpan(24) : setColSpan(12);
+    document.documentElement.clientWidth < 421 ? setColSpan(24) : setColSpan(12);
   });
 
   return (

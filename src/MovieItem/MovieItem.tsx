@@ -31,7 +31,8 @@ export const MovieItem: FC<{ itemProps: IReqItem; rateMovie: (movieId: number, r
   const descriptionShortener = (description: string): string => {
     const overviewArr = description.split(' ');
     overviewArr.length = 13;
-    const shortOverview = overviewArr.join(' ');
+    let shortOverview = overviewArr.join(' ');
+    shortOverview += ' ...';
     return shortOverview;
   };
   let circleClass = 'circle';
@@ -72,25 +73,21 @@ export const MovieItem: FC<{ itemProps: IReqItem; rateMovie: (movieId: number, r
               </Title>
               <div className="averageRating">
                 <div className={circleClass}>
-                  <span className="averageRatingCounter">{vote_average}</span>
+                  <span className="averageRatingCounter">{vote_average.toFixed(1)}</span>
                 </div>
               </div>
             </div>
             <div className="releaseDate">
               {release_date ? format(new Date(release_date), 'MMMM d, y') : 'дата выхода неизвестна'}
             </div>
-            <div style={{ marginBottom: 10 }}>
-              <div className="genresWrapper">{genres}</div>
-            </div>
+            <div className="genresWrapper">{genres}</div>
           </div>
-          <div style={{ marginBottom: 10 }}>
-            <Paragraph className="overview" style={{ overflow: 'hidden' }}>
-              {descriptionShortener(overview)}
-            </Paragraph>
-          </div>
-          <div style={{ display: 'inline-block', bottom: 0, height: 46, alignItems: 'center' }}>
+          <Paragraph className="overview" style={{ overflow: 'hidden' }}>
+            {descriptionShortener(overview)}
+          </Paragraph>
+          <div className="rate">
             <Rate
-              style={{ fontSize: 18 }}
+              style={{ fontSize: 15, position: 'absolute', bottom: 0, right: 0 }}
               count={10}
               allowHalf
               allowClear={false}
