@@ -1,6 +1,6 @@
 import { IPopular, IReqItem } from '../interfaces';
 
-export class MovieDBService {
+class MovieDBService {
   _baseUrl: string = 'https://api.themoviedb.org/3/';
 
   _apiKey: string = 'f7e88ab48889b711cf5ed287d894ccbc';
@@ -16,10 +16,10 @@ export class MovieDBService {
     }
     return await res.json();
   }
-  // https://api.themoviedb.org/3/authentication/guest_session/new?api_key=<<api_key>>
+
   async getGuestSession() {
-    const request: any = await fetch(`${this._baseUrl}authentication/guest_session/new?api_key=${this._apiKey}`);
-    return await request.json();
+    const response = await fetch(`${this._baseUrl}authentication/guest_session/new?api_key=${this._apiKey}`);
+    return await response.json();
   }
 
   async rateMovie(movie_id: number, rating: number, guestSession: string) {
@@ -36,8 +36,6 @@ export class MovieDBService {
       }
     );
     return response;
-    // let result = await response.json();
-    // console.log(result);
   }
 
   async getPopular(page: number): Promise<Array<IReqItem>> {
@@ -45,18 +43,18 @@ export class MovieDBService {
     return res.results;
   }
 
-  async getSearch(query: string, page: number): Promise<Array<IReqItem>> {
-    const res: any = await this.fetcher('search/movie', query, page);
+  async getSearch(query: string, page: number): Promise<IPopular> {
+    const res = await this.fetcher('search/movie', query, page);
     return res;
   }
 
   async getTopRated(page: number): Promise<Array<IReqItem>> {
-    const res: any = await this.fetcher('movie/top_rated', '', page);
+    const res = await this.fetcher('movie/top_rated', '', page);
     return res;
   }
-  // https://api.themoviedb.org/3/account/{account_id}/rated/movies?api_key=<<api_key>>&language=en-US&sort_by=created_at.asc&page=1
+
   async getRated(session: string) {
-    const res: any = await fetch(
+    const res = await fetch(
       `https://api.themoviedb.org/3/guest_session/${session}/rated/movies?api_key=${this._apiKey}&language=en-US&sort_by=created_at.asc`
     );
     return await res.json();
@@ -65,10 +63,11 @@ export class MovieDBService {
   async getMovie(id: number, page: number) {
     return this.fetcher(`movie/${id}`, '', page);
   }
-  // https://api.themoviedb.org/3/genre/movie/list?api_key=<<api_key>>&language=en-US
+
   async getGenres() {
     const res = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${this._apiKey}&language=en-US`);
-    // console.log(res);
     return await res.json();
   }
 }
+
+export const movieDBService = new MovieDBService();

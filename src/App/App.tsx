@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
-import { MoviesList, ListSwitcher, MovieSearch, MovieDBService } from '../router';
+import { MoviesList, ListSwitcher, MovieSearch, movieDBService } from '../router';
 import { GenresContext } from '../GenresContext/GenresContext';
 import './App.css';
-import { IReqItem } from '../interfaces';
+import { IReqItem, IPopular } from '../interfaces';
 
 function App() {
   const [search, setSearch] = useState('return');
@@ -14,9 +14,7 @@ function App() {
   const [page, setPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(1);
   const [session, setSession] = useState('');
-  const [genresState, setGenres] = useState<any>([]);
-
-  const movieDBService = new MovieDBService();
+  const [genresState, setGenres] = useState<[]>([]);
 
   useEffect(() => {
     let genres = movieDBService.getGenres();
@@ -34,7 +32,8 @@ function App() {
     setLoading(true);
     const searchedArr = movieDBService.getSearch(search, page);
     searchedArr
-      .then((data: any) => {
+      .then((data: IPopular) => {
+        console.log(data);
         setMovies(data.results);
         setTotalPages(data.total_results);
         setSearch(search);
