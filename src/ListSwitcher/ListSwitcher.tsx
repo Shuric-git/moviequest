@@ -1,15 +1,12 @@
 import { FC } from 'react';
 import { Tabs } from 'antd';
 
+import { IListSwitcher } from '../interfaces';
 import 'antd/dist/antd.css';
 
 const { TabPane } = Tabs;
 
-export const ListSwitcher: FC<{ getRated: () => void; searchMovie: (query: string) => void; search: string }> = ({
-  getRated,
-  searchMovie,
-  search,
-}) => {
+export const ListSwitcher: FC<IListSwitcher> = ({ getRated, searchMovie, search }) => {
   const onChange = (key: string) => {
     if (key === '1') {
       searchMovie(search);

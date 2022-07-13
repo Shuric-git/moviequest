@@ -1,20 +1,21 @@
 import { FC, useEffect, useState } from 'react';
 import { Col, Row, Spin, Alert, Pagination } from 'antd';
 
-import { IReqItem } from '../interfaces';
+import './MovieList.css';
+import { IMovieList, IReqItem } from '../interfaces';
 import { MovieItem } from '../router';
 
-export const MoviesList: FC<{
-  choosePage: (current: number) => void;
-  searchMovie: (search: string, page: number) => void;
-  rateMovie: (movieId: number, rating: number) => void;
-  search: string;
-  page: number;
-  movies: IReqItem[];
-  loading: boolean;
-  error: boolean;
-  totalPages: number;
-}> = ({ choosePage, rateMovie, searchMovie, search, page, movies, loading, error, totalPages }) => {
+export const MoviesList: FC<IMovieList> = ({
+  choosePage,
+  rateMovie,
+  searchMovie,
+  search,
+  page,
+  movies,
+  loading,
+  error,
+  totalPages,
+}) => {
   const [colSpan, setColSpan] = useState(12);
 
   useEffect(() => {

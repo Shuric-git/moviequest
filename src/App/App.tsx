@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { MoviesList, ListSwitcher, MovieSearch, movieDBService } from '../router';
+import { MoviesList, ListSwitcher, MovieSearch, MovieDBService } from '../router';
 import { GenresContext } from '../GenresContext/GenresContext';
 import './App.css';
 import { IReqItem, IPopular } from '../interfaces';
@@ -17,12 +17,12 @@ function App() {
   const [genresState, setGenres] = useState<[]>([]);
 
   useEffect(() => {
-    let genres = movieDBService.getGenres();
+    let genres = MovieDBService.getGenres();
     genres.then((data) => {
       setGenres(data.genres);
     });
-    let guestSession = movieDBService.getGuestSession();
-    guestSession.then((data: any) => {
+    let guestSession = MovieDBService.getGuestSession();
+    guestSession.then((data: { guest_session_id: string }) => {
       setSession(data.guest_session_id);
     });
     localStorage.clear();
@@ -30,10 +30,9 @@ function App() {
 
   const searchMovie = (search: string, page: number = 1) => {
     setLoading(true);
-    const searchedArr = movieDBService.getSearch(search, page);
+    const searchedArr = MovieDBService.getSearch(search, page);
     searchedArr
       .then((data: IPopular) => {
-        console.log(data);
         setMovies(data.results);
         setTotalPages(data.total_results);
         setSearch(search);
@@ -54,11 +53,11 @@ function App() {
   };
 
   const rateMovie = (movieId: number, rating: number) => {
-    movieDBService.rateMovie(movieId, rating, session);
+    MovieDBService.rateMovie(movieId, rating, session);
   };
 
   const getRated = () => {
-    let rated = movieDBService.getRated(session);
+    let rated = MovieDBService.getRated(session);
     rated.then((data) => {
       setMovies(data.results);
       setTotalPages(data.total_results);

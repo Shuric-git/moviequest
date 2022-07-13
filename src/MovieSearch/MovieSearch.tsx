@@ -1,14 +1,14 @@
-import { FC } from 'react';
+import { ChangeEvent, FC } from 'react';
 import { debounce } from 'lodash';
 
 import './MovieSearch.css';
 
 export const MovieSearch: FC<{ searchMovie: (query: string) => void }> = ({ searchMovie }) => {
-  const fn = (input: any) => {
+  const fn = (input: string) => {
     searchMovie(input);
   };
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     fn(e.target.value);
   };
 

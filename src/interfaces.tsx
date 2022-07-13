@@ -1,3 +1,5 @@
+import { ChangeEvent } from 'react';
+
 interface IReqItem {
   adult: boolean;
   backdrop_path: string;
@@ -14,7 +16,19 @@ interface IReqItem {
   video: boolean;
   vote_average: number;
   vote_count: number;
-  rateMovie: (movieId: { id: number }, rating: { e: any }) => void;
+  rateMovie: (movieId: { id: number }, rating: { e: ChangeEvent<HTMLInputElement> }) => void;
+}
+
+interface IMovieList {
+  choosePage: (current: number) => void;
+  searchMovie: (search: string, page: number) => void;
+  rateMovie: (movieId: number, rating: number) => void;
+  search: string;
+  page: number;
+  movies: IReqItem[];
+  loading: boolean;
+  error: boolean;
+  totalPages: number;
 }
 
 interface IPopular {
@@ -24,11 +38,15 @@ interface IPopular {
   total_results: number;
 }
 
-interface ISearch {
-  page: number;
-  results: Array<IReqItem>;
-  total_pages: number;
-  total_results: number;
+interface IListSwitcher {
+  getRated: () => void;
+  searchMovie: (query: string) => void;
+  search: string;
 }
 
-export type { IReqItem, IPopular, ISearch };
+interface IMovieItem {
+  itemProps: IReqItem;
+  rateMovie: (movieId: number, rating: number) => void;
+}
+
+export type { IReqItem, IPopular, IListSwitcher, IMovieItem, IMovieList };
