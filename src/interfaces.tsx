@@ -24,4 +24,11 @@ interface IPopular {
   total_results: number;
 }
 
-export type { IReqItem, IPopular };
+interface ISearch {
+  page: number;
+  results: Array<IReqItem>;
+  total_pages: number;
+  total_results: number;
+}
+
+export type { IReqItem, IPopular, ISearch };
